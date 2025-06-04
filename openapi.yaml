@@ -1,0 +1,439 @@
+openapi: 3.1.0
+info:
+  title: SEO Killer API
+  version: '1.0.0'
+  description: |
+    API endpoints for the SEO Killer Action plugin. This service proxies
+    requests to a customer site's SEO Killer WP plugin using the provided
+    site name and API key.
+servers:
+  - url: https://api.seokiller.net
+  - url: https://{site}
+    variables:
+      site:
+        default: example.com
+        description: Müşteri sitesinin adresi
+security:
+  - ApiKeyAuth: []
+paths:
+  /wp-json/seokiller/v1/debug:
+    get:
+      summary: Debug
+      operationId: debug
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/get-site-info:
+    post:
+      summary: Site Bilgisi
+      operationId: getSiteInfo
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/get-site-info-alt:
+    post:
+      summary: Site Bilgisi (Alt)
+      operationId: getSiteInfoAlt
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/get-categories:
+    post:
+      summary: Kategoriler
+      operationId: getCategories
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/get-categories-alt:
+    post:
+      summary: Kategoriler (Alt)
+      operationId: getCategoriesAlt
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/get-authors:
+    post:
+      summary: Yazarlar
+      operationId: getAuthors
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/get-authors-alt:
+    post:
+      summary: Yazarlar (Alt)
+      operationId: getAuthorsAlt
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/get-posts:
+    post:
+      summary: Yazılar
+      operationId: getPosts
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/get-posts-alt:
+    post:
+      summary: Yazılar (Alt)
+      operationId: getPostsAlt
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/get-post/{id}:
+    post:
+      summary: Tek Yazı
+      operationId: getPost
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/get-post-alt/{id}:
+    post:
+      summary: Tek Yazı (Alt)
+      operationId: getPostAlt
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/create-content:
+    post:
+      summary: İçerik Oluştur
+      operationId: createContent
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/create-content-alt:
+    post:
+      summary: İçerik Oluştur (Alt)
+      operationId: createContentAlt
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/update-content/{id}:
+    post:
+      summary: İçerik Güncelle
+      operationId: updateContent
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/update-content-alt/{id}:
+    post:
+      summary: İçerik Güncelle (Alt)
+      operationId: updateContentAlt
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/delete-post/{id}:
+    post:
+      summary: Yazı Sil
+      operationId: deletePost
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/delete-post-alt/{id}:
+    post:
+      summary: Yazı Sil (Alt)
+      operationId: deletePostAlt
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/get-products:
+    post:
+      summary: Ürünler
+      operationId: getProducts
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/get-products-alt:
+    post:
+      summary: Ürünler (Alt)
+      operationId: getProductsAlt
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/get-product/{id}:
+    post:
+      summary: Tek Ürün
+      operationId: getProduct
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/create-product:
+    post:
+      summary: Ürün Oluştur
+      operationId: createProduct
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/create-product-alt:
+    post:
+      summary: Ürün Oluştur (Alt)
+      operationId: createProductAlt
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/update-product/{id}:
+    post:
+      summary: Ürün Güncelle
+      operationId: updateProduct
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/update-product-alt/{id}:
+    post:
+      summary: Ürün Güncelle (Alt)
+      operationId: updateProductAlt
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/delete-product/{id}:
+    post:
+      summary: Ürün Sil
+      operationId: deleteProduct
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/delete-product-alt/{id}:
+    post:
+      summary: Ürün Sil (Alt)
+      operationId: deleteProductAlt
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/diagnostic:
+    post:
+      summary: Tanılama
+      operationId: diagnostic
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/json-test:
+    post:
+      summary: JSON Test
+      operationId: jsonTest
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller/v1/openai-test:
+    options:
+      summary: OpenAI Test (OPTIONS)
+      operationId: openaiTestOptions
+      responses:
+        '200':
+          description: Successful response
+
+# SEO Killer WP plugin endpoints
+  /wp-json/seokiller-wp/v1/site-info:
+    get:
+      summary: Müşteri sitesi bilgisi
+      operationId: getWpSiteInfo
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller-wp/v1/categories:
+    get:
+      summary: Tüm kategoriler
+      operationId: getWpCategories
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller-wp/v1/authors:
+    get:
+      summary: Tüm yazarlar
+      operationId: getWpAuthors
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller-wp/v1/posts:
+    get:
+      summary: Yazı listesi
+      operationId: getWpPosts
+      responses:
+        '200':
+          description: Successful response
+    post:
+      summary: Yeni yazı oluştur
+      operationId: createWpPost
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller-wp/v1/create-content:
+    post:
+      summary: Esnek içerik oluştur
+      operationId: createWpContent
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller-wp/v1/posts/{id}:
+    get:
+      summary: Yazı detayı
+      operationId: getWpPost
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+    put:
+      summary: Yazıyı güncelle
+      operationId: updateWpPost
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+    delete:
+      summary: Yazıyı sil
+      operationId: deleteWpPost
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller-wp/v1/update-content/{postId}:
+    put:
+      summary: Esnek içerik güncelle
+      operationId: updateWpContent
+      parameters:
+        - in: path
+          name: postId
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller-wp/v1/debug:
+    get:
+      summary: API bağlantı testi
+      operationId: wpDebug
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller-wp/v1/test:
+    get:
+      summary: Basit test
+      operationId: wpTest
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller-wp/v1/products:
+    get:
+      summary: Ürün listesi
+      operationId: getWpProducts
+      responses:
+        '200':
+          description: Successful response
+    post:
+      summary: Yeni ürün oluştur
+      operationId: createWpProduct
+      responses:
+        '200':
+          description: Successful response
+  /wp-json/seokiller-wp/v1/products/{id}:
+    put:
+      summary: Ürünü güncelle
+      operationId: updateWpProduct
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+    delete:
+      summary: Ürünü sil
+      operationId: deleteWpProduct
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-SEOKILLER-API-KEY
